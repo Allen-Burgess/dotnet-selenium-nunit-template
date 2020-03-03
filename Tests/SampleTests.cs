@@ -24,7 +24,7 @@ namespace SeleniumBoilerplate.Tests
 		[TearDown]
 		public void TearDown()
 		{
-
+			TestCaseTearDown();
 		}
 	}
 }
