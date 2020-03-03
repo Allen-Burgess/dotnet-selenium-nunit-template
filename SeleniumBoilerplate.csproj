@@ -73,7 +73,7 @@
     <Compile Include="Data\TestDataSet.cs" />
     <Compile Include="Config\NUnitSettings.cs" />
     <Compile Include="PageUtils\NUnit\NUnitUtils.cs" />
-    <Compile Include="PageUtils\Selenium\Driver.cs" />
+    <Compile Include="PageUtils\Selenium\Driver\Waits.cs" />
     <Compile Include="PageUtils\Selenium\Element.cs" />
     <Compile Include="POM\DynamicBase.cs" />
     <Compile Include="POM\PageBase.cs" />

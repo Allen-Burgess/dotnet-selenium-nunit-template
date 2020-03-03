@@ -27,9 +27,10 @@ namespace SeleniumBoilerplate.Tests
 		/// Example test with test data
 		/// </summary>
 		[TestCaseSource(nameof(SampleTestData))]
-		public void SampleTestTwo()
+		public void SampleTestTwo(TestDataSet testData)
 		{
-
+			// testData.GetData("KEY") allows you to retieve data for each test case using the first row as your keys.
+			// testData.SetData("KEY", "Value") allows you to set data at run time
 		}
 
 
