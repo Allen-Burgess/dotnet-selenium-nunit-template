@@ -82,12 +82,14 @@
     <Compile Include="Tests\SampleTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Data\Sample\SampleTestData.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data\Sample\" />
     <Folder Include="PageUtils\Selenium\WebElement\" />
     <Folder Include="POM\SamplePages\" />
   </ItemGroup>
