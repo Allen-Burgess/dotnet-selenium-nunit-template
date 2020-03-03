@@ -87,6 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\Sample\" />
+    <Folder Include="POM\SamplePages\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
