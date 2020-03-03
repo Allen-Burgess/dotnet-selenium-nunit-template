@@ -73,8 +73,9 @@
     <Compile Include="Data\TestDataSet.cs" />
     <Compile Include="Config\NUnitSettings.cs" />
     <Compile Include="PageUtils\NUnit\NUnitUtils.cs" />
-    <Compile Include="PageUtils\Selenium\Driver\Waits.cs" />
-    <Compile Include="PageUtils\Selenium\Element.cs" />
+    <Compile Include="PageUtils\Selenium\DynamicUtils.cs" />
+    <Compile Include="PageUtils\Selenium\WebDriver\Waits.cs" />
+    <Compile Include="PageUtils\Selenium\WebElement\Element.cs" />
     <Compile Include="POM\DynamicBase.cs" />
     <Compile Include="POM\PageBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

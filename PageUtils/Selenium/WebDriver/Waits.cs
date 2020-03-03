@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
 
-namespace SeleniumBoilerplate.Selenium.PageUtils.Selenium.Driver
+namespace SeleniumBoilerplate.Selenium.PageUtils.Selenium.WebDriver
 {
 	public static class Driver
 	{
