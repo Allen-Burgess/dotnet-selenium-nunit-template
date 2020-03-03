@@ -5,6 +5,12 @@ VisualStudioVersion = 15.0.28307.705
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumBoilerplate", "SeleniumBoilerplate.csproj", "{04618CEA-2DC1-4281-81D2-ABE0EFC8E0C1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D9D882C8-1A6F-49EB-9B79-357C1F3CF290}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		Test.runsettings = Test.runsettings
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

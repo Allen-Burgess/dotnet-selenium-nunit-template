@@ -1,0 +1,6 @@
+﻿<RunSettings>
+  <TestRunParameters>
+    <Parameter name="BROWSER" value ="chrome"/>
+    <Parameter name ="URL" value="https://www.google.co.uk"/>
+  </TestRunParameters>
+</RunSettings>
