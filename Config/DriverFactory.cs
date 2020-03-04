@@ -3,6 +3,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Edge;
+using System;
 
 namespace SeleniumBoilerplate.Config
 {
@@ -97,9 +98,14 @@ namespace SeleniumBoilerplate.Config
 			return driver;
 		}
 
+		/// <summary>
+		/// Sets the default driver timours
+		/// </summary>
+		/// <param name="driver">web driver</param>
+		/// <param name="pageload">seconds to wait for pageload</param>
 		public static void ManageTimeouts(this IWebDriver driver, int pageload = 60)
 		{
-			driver.ManageTimeouts(pageload);
+			driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(pageload);
 			//driver.Manage().Timeouts().ImplicitWait
 			//driver.Manage().Timeouts().AsynchronousJavaScript
 		}

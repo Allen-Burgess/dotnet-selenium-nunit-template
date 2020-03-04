@@ -1,7 +1,7 @@
 ﻿<RunSettings>
   <TestRunParameters>
-    <Parameter name="BROWSER" value ="firefox"/>
+    <Parameter name="BROWSER" value ="ie11"/>
     <Parameter name ="URL" value="https://www.google.co.uk"/>
-    <Parameter name ="HEADLESS" value="true"/> <!-- IE and Edge do not support headless mode -->
+    <Parameter name ="HEADLESS" value="false"/> <!-- IE and Edge do not support headless mode -->
   </TestRunParameters>
 </RunSettings>
