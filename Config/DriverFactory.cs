@@ -18,6 +18,9 @@ namespace SeleniumBoilerplate.Config
 		private static void SetChromeOptions()
 		{
 			ChromeOptions options = new ChromeOptions();
+
+			if (_headless) options.AddArguments("--headless", "--disable-gpu");
+
 			options.AddArguments(
 				"--disable-extensions", 
 				"--start-maximized",
