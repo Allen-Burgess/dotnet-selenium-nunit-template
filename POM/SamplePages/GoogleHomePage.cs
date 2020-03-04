@@ -19,6 +19,7 @@ namespace SeleniumBoilerplate.POM.SamplePages
 		/// </summary>
 		public void ClickSearch()
 		{
+			Driver.WaitForElementToBeClickable(By.CssSelector("div.sbtc"));
 			SearchInput.SendKeys(Keys.Escape);
 			GoogleSearch.Click();
 		}

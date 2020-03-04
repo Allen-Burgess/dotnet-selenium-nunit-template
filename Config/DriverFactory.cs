@@ -6,30 +6,88 @@ using OpenQA.Selenium.Edge;
 
 namespace SeleniumBoilerplate.Config
 {
-	class DriverFactory
+	static class DriverFactory
 	{
+		private static DriverOptions _options;
+		private static bool _headless;
+
+		/// <summary>
+		/// Sets the _options to chrome options
+		/// </summary>
+		private static void SetChromeOptions()
+		{
+			ChromeOptions options = new ChromeOptions();
+			options.AddArguments(
+				"--disable-extensions", 
+				"--start-maximized",
+				"--disable-notifications",
+				"--disable-popup-blocking",
+				"--disable-infobars", 
+				"--no-sandbox");
+			_options = options;
+		}
+
+		/// <summary>
+		/// Sets the _options to firefox options
+		/// </summary>
+		private static void SetFirefoxOptions()
+		{
+			FirefoxOptions options = new FirefoxOptions();
+			if (_headless) options.AddArguments("--headless", "--disable-gpu");
+			options.AddArguments(
+				"--start-maximized");
+			_options = options;
+		}
+
+		/// <summary>
+		/// Sets the _options to IE 11 options
+		/// </summary>
+		private static void SetInternetExplorerOptions()
+		{
+			InternetExplorerOptions options = new InternetExplorerOptions();
+			options.AddAdditionalCapability("IgnoreZoomSetting", true);
+			options.RequireWindowFocus = true;
+			_options = options;
+		}
+
+		/// <summary>
+		/// Sets the _options to microsoft edge options
+		/// </summary>
+		private static void SetEdgeOptions()
+		{
+			EdgeOptions options = new EdgeOptions();
+			options.UseInPrivateBrowsing = true;
+			_options = options;
+		}
+
 		/// <summary>
 		/// Returns a webdriver object on the specified browser
 		/// </summary>
 		/// <param name="browser">web driver browser to return</param>
 		/// <returns>Web driver</returns>
-		public static IWebDriver InitDriver(string browser)
+		public static IWebDriver InitDriver(string browser, bool headless)
 		{
 			IWebDriver driver = null;
+			// IE and Edge do not support headless
+			_headless = headless;
 
 			switch (browser.ToLower())
 			{
 				case "chrome":
-					driver = new ChromeDriver();
+					SetChromeOptions();
+					driver = new ChromeDriver(_options as ChromeOptions);
 					break;
 				case "firefox":
-					driver = new FirefoxDriver();
+					SetFirefoxOptions();
+					driver = new FirefoxDriver(_options as FirefoxOptions);
 					break;
 				case "ie11":
-					driver = new InternetExplorerDriver();
+					SetInternetExplorerOptions();
+					driver = new InternetExplorerDriver(_options as InternetExplorerOptions);
 					break;
 				case "edge":
-					driver = new EdgeDriver();
+					SetEdgeOptions();
+					driver = new EdgeDriver(_options as EdgeOptions);
 					break;
 				default:
 					driver = new ChromeDriver();
@@ -37,6 +95,13 @@ namespace SeleniumBoilerplate.Config
 			}
 
 			return driver;
+		}
+
+		public static void ManageTimeouts(this IWebDriver driver, int pageload = 60)
+		{
+			driver.ManageTimeouts(pageload);
+			//driver.Manage().Timeouts().ImplicitWait
+			//driver.Manage().Timeouts().AsynchronousJavaScript
 		}
 	}
 }

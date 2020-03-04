@@ -34,7 +34,7 @@ namespace SeleniumBoilerplate.Tests
 		/// <summary>
 		/// Example test with test data - Enter a google search from the test data and click first result
 		/// </summary>
-		[TestCaseSource(nameof(SampleTestData))] // Thef
+		[TestCaseSource(nameof(SampleTestData))]
 		public void SampleTestTwo(TestDataSet testData)
 		{
 			// testData.GetData("KEY") allows you to retieve data for each test case using the first row as your keys.

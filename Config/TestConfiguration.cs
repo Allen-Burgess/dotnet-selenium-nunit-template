@@ -41,10 +41,14 @@ namespace SeleniumBoilerplate.Config
 		/// <summary>
 		/// Inits the driver and navigates to the desired test URL
 		/// </summary>
-		/// <param name="url">Url to navigate to - if left at default will use the url stored in the parameters</param>
+		/// <param name="url">Url to navigate to - if left at default will use the url stored in the .runsettings parameters</param>
 		public void TestCaseSetUp(string url = null)
 		{
-			Driver = DriverFactory.InitDriver(TestContext.Parameters["BROWSER"]);
+			string browser = TestContext.Parameters["BROWSER"];
+			bool headless = Convert.ToBoolean(TestContext.Parameters["HEADLESS"].ToLower());
+
+			Driver = DriverFactory.InitDriver(browser, headless);
+			Driver.ManageTimeouts();
 
 			if (url == null)
 				Driver.Url = TestContext.Parameters["URL"];
