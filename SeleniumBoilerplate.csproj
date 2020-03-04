@@ -78,6 +78,9 @@
     <Compile Include="PageUtils\Selenium\WebDriver\Waits.cs" />
     <Compile Include="POM\DynamicBase.cs" />
     <Compile Include="POM\PageBase.cs" />
+    <Compile Include="POM\SamplePages\GoogleHomePage.cs" />
+    <Compile Include="POM\SamplePages\GoogleResultsPage.cs" />
+    <Compile Include="POM\SamplePages\GoogleSearchResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\SampleTests.cs" />
   </ItemGroup>
@@ -91,7 +94,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="PageUtils\Selenium\WebElement\" />
-    <Folder Include="POM\SamplePages\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="chromedriver.exe">
