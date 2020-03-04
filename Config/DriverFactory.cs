@@ -102,7 +102,7 @@ namespace SeleniumBoilerplate.Config
 		}
 
 		/// <summary>
-		/// Sets the default driver timours
+		/// Sets the default driver timouts
 		/// </summary>
 		/// <param name="driver">web driver</param>
 		/// <param name="pageload">seconds to wait for pageload</param>
