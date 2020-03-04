@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
+using System.Threading;
 
 namespace SeleniumBoilerplate.Selenium.PageUtils.Selenium.WebDriver
 {
@@ -91,6 +92,34 @@ namespace SeleniumBoilerplate.Selenium.PageUtils.Selenium.WebDriver
 			catch (WebDriverTimeoutException)
 			{
 				Assert.Fail($"Waiting for element to be clickable timed out. - {GetErrorMessageDetail(elementName, elementLocator, timeout)}");
+			}
+		}
+
+		/// <summary>
+		/// Waits for XML and JavaScript calls to complete.
+		/// </summary>
+		/// <param name="driver">The driver.</param>
+		/// <param name="timeoutSecs">The timeout secs.</param>
+		/// <param name="throwException">if set to <c>true</c> [throw exception].</param>
+		/// <exception cref="Exception">WebDriver timed out waiting for AJAX call to complete</exception>
+		public static void WaitForAjax(this IWebDriver driver, int timeoutSecs = 30, bool throwException = false)
+		{
+			try
+			{
+				for (var i = 0; i < timeoutSecs; i++)
+				{
+					var ajaxIsComplete = (bool)(driver as IJavaScriptExecutor).ExecuteScript("return jQuery.active == 0");
+					if (ajaxIsComplete) return;
+					Thread.Sleep(1000);
+				}
+				if (throwException)
+				{
+					throw new Exception("WebDriver timed out waiting for AJAX call to complete");
+				}
+			}
+			catch (WebDriverException)
+			{
+
 			}
 		}
 	}

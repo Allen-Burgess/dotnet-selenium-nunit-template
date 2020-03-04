@@ -75,7 +75,11 @@
     <Compile Include="Config\NUnitSettings.cs" />
     <Compile Include="PageUtils\NUnit\NUnitUtils.cs" />
     <Compile Include="PageUtils\Selenium\DynamicUtils.cs" />
+    <Compile Include="PageUtils\Selenium\WebDriver\Interactions.cs" />
+    <Compile Include="PageUtils\Selenium\WebDriver\Navigation.cs" />
     <Compile Include="PageUtils\Selenium\WebDriver\Waits.cs" />
+    <Compile Include="PageUtils\Selenium\WebElement\Interactions.cs" />
+    <Compile Include="PageUtils\Selenium\WebElement\Waits.cs" />
     <Compile Include="POM\DynamicBase.cs" />
     <Compile Include="POM\PageBase.cs" />
     <Compile Include="POM\SamplePages\GoogleHomePage.cs" />
@@ -92,9 +96,7 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="PageUtils\Selenium\WebElement\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="chromedriver.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
