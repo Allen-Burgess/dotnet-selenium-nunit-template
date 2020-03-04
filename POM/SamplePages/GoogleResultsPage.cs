@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using SeleniumBoilerplate.Selenium.PageUtils.Selenium.WebDriver;
 
 namespace SeleniumBoilerplate.POM.SamplePages
 {
@@ -11,6 +12,7 @@ namespace SeleniumBoilerplate.POM.SamplePages
 		/// </summary>
 		public void ClickFirstResult()
 		{
+			Driver.WaitForElementToBeClickable(By.CssSelector("div.g"));
 			var searchResults = GoogleSearchResult.GetList(Driver, Driver);
 			searchResults[0].Title.Click();
 		}
